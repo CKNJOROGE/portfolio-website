@@ -1,0 +1,293 @@
+:root {
+    --bg-color: #e0e5ec;
+    --primary-color: #4a76f5;
+    --text-color: #5f677A;
+    --neumorphic-shadow-light: #ffffff;
+    --neumorphic-shadow-dark: #a3b1c6;
+}
+
+.dark-mode {
+    --bg-color: #1a1a1a;
+    --primary-color: #4a76f5;
+    --text-color: #d1d6e0;
+    --neumorphic-shadow-light: #2d2d2d;
+    --neumorphic-shadow-dark: #0d0d0d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Background Animated Blobs */
+.background-blobs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+}
+
+.blob1 {
+    width: 400px;
+    height: 400px;
+    top: -150px;
+    left: -150px;
+    background: #ff9a9e;
+    animation: move 20s infinite alternate;
+}
+
+.blob2 {
+    width: 300px;
+    height: 300px;
+    bottom: -100px;
+    right: -100px;
+    background: #fad0c4;
+    animation: move 25s infinite alternate-reverse;
+}
+
+@keyframes move {
+    from {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    to {
+        transform: translate(200px, 100px) rotate(360deg);
+    }
+}
+
+/* Glassmorphism Header */
+.glass-header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Main Content */
+main {
+    padding-top: 150px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Hero Section */
+.hero h1 {
+    font-size: 3.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Neumorphism Elements */
+.neumorphic-btn, .neumorphic-btn-small {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    background: var(--bg-color);
+    box-shadow: 8px 8px 16px var(--neumorphic-shadow-dark), -8px -8px 16px var(--neumorphic-shadow-light);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: box-shadow 0.2s ease-out;
+}
+
+.neumorphic-btn:active, .neumorphic-btn-small:active {
+    box-shadow: inset 5px 5px 10px var(--neumorphic-shadow-dark), inset -5px -5px 10px var(--neumorphic-shadow-light);
+}
+
+.neumorphic-btn-small {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.9rem;
+}
+
+.neumorphic-btn.loading {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.neumorphic-card {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 12px 12px 24px var(--neumorphic-shadow-dark), -12px -12px 24px var(--neumorphic-shadow-light);
+    text-align: left;
+}
+
+.skills-container, .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 15px 15px 30px var(--neumorphic-shadow-dark), -15px -15px 30px var(--neumorphic-shadow-light);
+}
+
+/* Neumorphic Form */
+.neumorphic-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.neumorphic-input {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 12px;
+    background: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    box-shadow: inset 5px 5px 10px var(--neumorphic-shadow-dark), inset -5px -5px 10px var(--neumorphic-shadow-light);
+}
+
+.neumorphic-input:focus {
+    outline: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .glass-header {
+        width: 95%;
+        padding: 0.8rem 1rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    main {
+        padding-top: 200px;
+    }
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    margin-left: 1rem;
+}
+
+/* Form Validation Error */
+.form-error {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    background: var(--bg-color);
+    box-shadow: inset 5px 5px 10px var(--neumorphic-shadow-dark), inset -5px -5px 10px var(--neumorphic-shadow-light);
+    color: #ff4d4d; /* Red for errors */
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.form-error.show {
+    display: block;
+}

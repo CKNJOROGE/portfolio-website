@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher K Njoroge - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit-code.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+</head>
+<body>
+
+    <div class="background-blobs">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+    </div>
+
+    <header class="glass-header">
+        <nav>
+            <a href="#home" class="logo">CK</a>
+            <ul>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" class="neumorphic-btn neumorphic-btn-small">Toggle Theme</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Hi, I'm Christopher K Njoroge</h1>
+            <p>A passionate Web Developer creating modern and responsive web applications.</p>
+            <a href="#projects" class="neumorphic-btn">View My Work</a>
+        </section>
+
+        <section id="skills">
+            <h2>My Skills</h2>
+            <div class="skills-container">
+                <div class="neumorphic-card">
+                    <h3>Frontend <i class="fas fa-code"></i></h3>
+                    <p>HTML, CSS, JavaScript, React, Vue.js</p>
+                </div>
+                <div class="neumorphic-card">
+                    <h3>Backend <i class="fas fa-server"></i></h3>
+                    <p>Node.js, Express, Python, Django</p>
+                </div>
+                <div class="neumorphic-card">
+                    <h3>Databases <i class="fas fa-database"></i></h3>
+                    <p>PostgreSQL, MySQL</p>
+                </div>
+                <div class="neumorphic-card">
+                    <h3>Tools <i class="fas fa-tools"></i></h3>
+                    <p>Git, Docker</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="neumorphic-card project-card">
+                    <h3>G-HUB</h3>
+                    <p>A brief description of your project. Explain the technology stack used and its purpose.</p>
+                    <a href="#" class="neumorphic-btn-small" target="_blank">View Project</a>
+                </div>
+                <div class="neumorphic-card project-card">
+                    <h3>Sustenirhr.com</h3>
+                    <p>A brief description of your project. Explain the technology stack used and its purpose.</p>
+                    <a href="https://sustenirhr.com/" class="neumorphic-btn-small" target="_blank">View Project</a>
+                </div>
+                <div class="neumorphic-card project-card">
+                    <h3>resume-builder</h3>
+                    <p>A brief description of your project. Explain the technology stack used and its purpose.</p>
+                    <a href="https://resume-builder-clean.netlify.app" class="neumorphic-btn-small" target="_blank">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <form id="contact-form" class="neumorphic-form">
+                <input id="name" type="text" placeholder="Your Name" class="neumorphic-input" required>
+                <input id="email" type="email" placeholder="Your Email" class="neumorphic-input" required>
+                <textarea id="message" placeholder="Your Message" rows="5" class="neumorphic-input" required></textarea>
+                <button type="submit" class="neumorphic-btn">Send Message</button>
+            </form>
+            <div id="form-error" class="form-error"></div> <!-- New error message container -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Christopher. K. Njoroge. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
