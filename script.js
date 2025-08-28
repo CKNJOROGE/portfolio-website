@@ -4,18 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');
-    const isDarkMode = localStorage.getItem('darkMode') === 'true'; // Removed prefers-color-scheme check for manual control
+    let isDarkMode = localStorage.getItem('darkMode') !== 'false'; // Default to true (dark mode) unless explicitly set to false
     if (isDarkMode) {
         document.documentElement.classList.add('dark-mode');
         themeToggle.textContent = 'Light Theme';
     } else {
+        document.documentElement.classList.remove('dark-mode');
         themeToggle.textContent = 'Dark Theme';
     }
     themeToggle.addEventListener('click', () => {
         document.documentElement.classList.toggle('dark-mode');
-        const darkModeEnabled = document.documentElement.classList.contains('dark-mode');
-        localStorage.setItem('darkMode', darkModeEnabled);
-        themeToggle.textContent = darkModeEnabled ? 'Light Theme' : 'Dark Theme';
+        isDarkMode = document.documentElement.classList.contains('dark-mode');
+        localStorage.setItem('darkMode', isDarkMode);
+        themeToggle.textContent = isDarkMode ? 'Light Theme' : 'Dark Theme';
     });
 
     // Smooth scrolling for navigation links
@@ -99,4 +100,5 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
 });
