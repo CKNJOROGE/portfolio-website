@@ -275,6 +275,20 @@ footer {
     margin-left: 1rem;
 }
 
+/* Image Logo Styling */
+.logo-image {
+    width: 50px; /* Adjust based on your image size */
+    height: auto;
+    vertical-align: middle;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+    .logo-image {
+        width: 40px; /* Smaller size for mobile */
+    }
+}
+
 /* Form Validation Error */
 .form-error {
     display: none;
